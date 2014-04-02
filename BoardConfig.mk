@@ -142,6 +142,7 @@ TARGET_FORCE_CPU_UPLOAD := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
