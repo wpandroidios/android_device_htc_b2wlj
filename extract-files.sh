@@ -2,6 +2,9 @@
 
 set -e
 
+export DEVICE=m8
+export VENDOR=htc
+
 if [ $# -eq 0 ]; then
   SRC=adb
 else
@@ -36,7 +39,7 @@ if [ -f ../$DEVICE/device-proprietary-files.txt ]; then
   done
 fi
 
-for FILE in `egrep -v '(^#|^$)' ../m8/proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../$DEVICE/proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`
   if [ ! -d $BASE/$DIR ]; then
@@ -51,7 +54,7 @@ done
 
 BASE=../../../vendor/$VENDOR/m8/proprietary
 rm -rf $BASE/*
-for FILE in `egrep -v '(^#|^$)' ../m8/common-proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../$DEVICE/common-proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`
   if [ ! -d $BASE/$DIR ]; then

@@ -24,32 +24,19 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
+# inherit from common msm8960
+-include device/htc/msm8974-common/BoardConfigCommon.mk
+
 BOARD_VENDOR := htc
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := m8
-TARGET_BOOTLOADER_BOARD_NAME := MSM8974
-TARGET_NO_BOOTLOADER := true
-
-# Platform
-TARGET_BOARD_PLATFORM := msm8974
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
-
-# Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := krait
-TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
+TARGET_BOOTLOADER_BOARD_NAME := m8spr
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --dt device/htc/m8spr/dtb --tags_offset 0x01e00000
 TARGET_KERNEL_CONFIG := m8_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 BOARD_KERNEL_SEPARATED_DT := true
@@ -74,75 +61,11 @@ WIFI_DRIVER_MODULE_NAME := "wlan"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
-# Flags
-COMMON_GLOBAL_CFLAGS += -DHTCLOG
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_AUDIO_VARIANT := caf
-TARGET_QCOM_DISPLAY_VARIANT := caf-new
-TARGET_QCOM_MEDIA_VARIANT := caf-new
-TARGET_USES_QCOM_BSP := true
-
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_LEGACY_ALSA_AUDIO := true
-TARGET_USES_QCOM_COMPRESSED_AUDIO := true
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
-
-# Graphics
-USE_OPENGL_RENDERER := true
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_ION := true
-BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/htc/m8/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init_shell.te \
-    init.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa_socket.te \
-    wpa.te
-
-# Webkit
-ENABLE_WEBGL := true
-TARGET_FORCE_CPU_UPLOAD := true
-
 # Filesystem
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/m8spr/rootdir/etc/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
@@ -195,4 +118,4 @@ TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
 # mmcblk0p47: b8000000  00000200  "userdata"
 
 # inherit from the proprietary version
--include vendor/htc/m8/BoardConfigVendor.mk
+-include vendor/htc/m8spr/BoardConfigVendor.mk
