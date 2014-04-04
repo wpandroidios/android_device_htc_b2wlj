@@ -59,7 +59,9 @@ on init
 
 # import cne init file
 on post-fs
-#    export LD_PRELOAD /vendor/lib/libNimsWrap.so
+    export LD_PRELOAD /vendor/lib/libNimsWrap.so
+    chown system carrier /carrier
+    chmod 0770 /carrier
 
 on fs
     wait /dev/block/platform/msm_sdcc.1/by-name/system
@@ -88,6 +90,11 @@ on fs
     wait /dev/block/platform/msm_sdcc.1/by-name/reserve
     mount vfat emmc@reserve /ramdump rw
     umount /ramdump
+
+    # mount carrier partition
+    mkdir /carrier 0770 system carrier
+    wait /dev/block/platform/msm_sdcc.1/by-name/carrier
+    mount ext4 emmc@carrier /carrier nosuid nodev noatime barrier=1,grpid
 
     # Mount radio image and link to /vendor/firmware
     mkdir /firmware/radio 0771 system system
@@ -120,7 +127,7 @@ on fs
     insmod /system/lib/modules/texfat.ko
 
     # Load Mocana FIPS module. Add here since it can make sure system is mounted
-    insmod /system/lib/modules/moc_platform_mod.ko
+	insmod /system/lib/modules/moc_platform_mod.ko
 	insmod /system/lib/modules/moc_crypto.ko
 	insmod /system/lib/modules/dm-crypt.ko
     # Load ecryptfs module
@@ -136,8 +143,6 @@ on post-fs-data
 # permissions for NFC
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
-    chown nfc nfc /sys/class/NFC_sensor/comn/nxp_uicc_swp
-    chmod 0664 /sys/class/NFC_sensor/comn/nxp_uicc_swp
 	setprop debug.nfc.fw_download "true"
 	setprop debug.nfc.fw_boot_download "false"
 
@@ -145,22 +150,24 @@ on boot
     start imsqmidaemon
     insmod /system/lib/modules/adsprpc.ko
 
-# + SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14 (Sync from M4ATT)
-    setprop net.tcp.buffersize.lte     524288,1048576,5120000,4096,221184,3461120
-    setprop net.tcp.buffersize.hspap   4096,174760,1572864,4096,225280,1220608
-    setprop net.tcp.buffersize.hspa    4096,174760,1572864,4096,225280,1220608
-    setprop net.tcp.buffersize.hsupa   4096,174760,1572864,4096,225280,1220608
-    setprop net.tcp.buffersize.hsdpa   4096,174760,1572864,4096,225280,1220608
-    setprop net.tcp.buffersize.umts    4096,174760,1572864,4096,225280,1220608
+# Define TCP buffer sizes for various networks
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.lte     524288,1048576,5120000,262144,524288,1220608
+    setprop net.tcp.buffersize.hspap   4096,174760,1572864,4096,16384,1220608
+    setprop net.tcp.buffersize.hspa    4096,174760,1572864,4096,16384,1220608
+    setprop net.tcp.buffersize.hsupa   4096,174760,1572864,4096,16384,1220608
+    setprop net.tcp.buffersize.hsdpa   4096,174760,1572864,4096,16384,1220608
+    setprop net.tcp.buffersize.umts    4096,174760,1572864,4096,16384,110208
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
-# - SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14 (Sync from M4ATT)
+    setprop net.tcp.buffersize.evdo_b  4094,87380,262144,4096,16384,262144
 
-# VMware BEGIN
-# VMware MVP feature list (generated)
-    setprop ro.mvp.features srvc,mvpdaff,grbks2,vpncrt,vpn,mvpdsec
-# VMware END
-
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  1220608
+    write /proc/sys/net/core/wmem_max  1220608
 
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
@@ -316,16 +323,6 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
 
-# VMware BEGIN
-# VMware MVP Hypervisor daemon
-# DO NOT REMOVE THIS COMMENT MVP_FEATURE_srvc
-# DO NOT REMOVE THIS COMMENT MVP_FEATURE_mvpdaff
-    service mvpd /system/bin/mvpd -F -a 14
-        class main
-        user root
-        disabled
-# VMware END
-
 # HTC CIR firmware update - BEGIN
 service cir_fw_update /system/bin/cir_fw_update -u cir.img
     class main
@@ -359,6 +356,13 @@ service tpd /sbin/tpd
     class core
     user root
 
+#++ DMAgent
+service dmagent /system/bin/dmagent -N -P19 -VSY -SA
+    class late_start
+    socket dmagent stream 660 root inet
+    user root
+#-- DMAgent
+
 # HTC Automotive - BEGIN
 service cand /system/bin/cand
     class main
@@ -369,4 +373,3 @@ service cand /system/bin/cand
 service read_dap_cert /system/bin/readDapCert
     class main
     oneshot
-
