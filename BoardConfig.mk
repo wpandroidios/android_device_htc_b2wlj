@@ -30,13 +30,13 @@
 BOARD_VENDOR := htc
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := m8spr
+TARGET_BOOTLOADER_BOARD_NAME := m8vzw
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --dt device/htc/m8spr/dtb --tags_offset 0x01e00000
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --dt device/htc/m8vzw/dtb --tags_offset 0x01e00000
 TARGET_KERNEL_CONFIG := m8_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 BOARD_KERNEL_SEPARATED_DT := true
@@ -65,7 +65,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/htc/m8spr/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/m8vzw/rootdir/etc/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
@@ -118,4 +118,4 @@ TARGET_RECOVERY_FSTAB := device/htc/m8spr/rootdir/etc/fstab.qcom
 # mmcblk0p47: b8000000  00000200  "userdata"
 
 # inherit from the proprietary version
--include vendor/htc/m8spr/BoardConfigVendor.mk
+-include vendor/htc/m8vzw/BoardConfigVendor.mk
