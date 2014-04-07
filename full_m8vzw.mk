@@ -27,6 +27,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from m8 device
 $(call inherit-product, device/htc/m8vzw/device.mk)
 
+# Inherit from msm8974-common
+$(call inherit-product, device/htc/msm8974-common/msm8974.mk)
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_m8vzw
 PRODUCT_DEVICE := m8vzw
