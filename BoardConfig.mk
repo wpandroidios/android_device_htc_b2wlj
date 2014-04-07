@@ -65,7 +65,6 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/htc/m8vzw/rootdir/etc/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
