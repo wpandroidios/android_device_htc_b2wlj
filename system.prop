@@ -1,0 +1,33 @@
+# system.prop for m8vzw
+#
+
+telephony.lteOnCdmaDevice=1
+gsm.sim.operator.alpha=Verizon
+gsm.operator.alpha=Verizon
+ro.cdma.home.operator.numeric=310012
+gsm.sim.operator.numeric=310012
+gsm.operator.numeric=310012
+ro.telephony.default_network=10
+ro.ril.vzw.feature=1
+ro.telephony.default_cdma_sub=0
+ro.ril.oem.ecclist=911,*911,#911
+ro.ril.enable.a52=0
+ro.ril.enable.a53=1
+ro.ril.enable.dtm=0
+ro.ril.gprsclass=12
+ro.ril.att.feature=0
+ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420
+ro.ril.enable.managed.roaming=1
+ro.ril.enable.sdr=0
+ro.ril.oem.show.act=0
+ro.ril.enable.gea3=1
+ro.ril.set.mtusize=1428
+ro.ril.enable.r8fd=1
+ro.ril.air.enabled=1
+ro.ril.wp.feature=1
+ro.cdma.data_retry_config=max_retries=infinite,0,0,60000,120000,480000,900000
+ro.ril.gsm.to.lte.blind.redir=1
+ro.config.svlte1x=true
+ro.gps.agps_provider=1
+persist.radio.snapshot_enabled = 1
+persist.radio.snapshot_timer = 22
