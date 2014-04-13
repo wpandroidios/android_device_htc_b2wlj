@@ -4,9 +4,9 @@
 telephony.lteOnCdmaDevice=1
 gsm.sim.operator.alpha=Verizon
 gsm.operator.alpha=Verizon
-ro.cdma.home.operator.numeric=310012
-gsm.sim.operator.numeric=310012
-gsm.operator.numeric=310012
+ro.cdma.home.operator.numeric=311480
+gsm.sim.operator.numeric=311480
+gsm.operator.numeric=311480
 ro.telephony.default_network=10
 ro.ril.vzw.feature=1
 ro.telephony.default_cdma_sub=0
