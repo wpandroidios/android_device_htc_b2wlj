@@ -27,6 +27,4 @@
 # inherit from common msm8974
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
-TARGET_KERNEL_CONFIG := cm_m8wl_defconfig
-
 TARGET_OTA_ASSERT_DEVICE := m8wl,m8vzw
