@@ -1,16 +1,16 @@
-# system.prop for m8vzw
+# system.prop for b2wlj
 #
 
 telephony.lteOnCdmaDevice=1
-gsm.sim.operator.alpha=Verizon
-gsm.operator.alpha=Verizon
-ro.cdma.home.operator.numeric=311480
-gsm.sim.operator.numeric=311480
-gsm.operator.numeric=311480
+gsm.sim.operator.alpha=KDDI
+gsm.operator.alpha=KDDI
+ro.cdma.home.operator.numeric=44050
+gsm.sim.operator.numeric=44050
+gsm.operator.numeric=44050
 ro.telephony.default_network=10
-ro.ril.vzw.feature=1
+# ro.ril.vzw.feature=1
 ro.telephony.default_cdma_sub=0
-ro.ril.oem.ecclist=911,*911,#911
+ro.ril.oem.ecclist=110,118,119,184110,184118,184119,186110,186118,186119
 ro.ril.enable.a52=0
 ro.ril.enable.a53=1
 ro.ril.enable.dtm=0
@@ -21,11 +21,11 @@ ro.ril.enable.managed.roaming=1
 ro.ril.enable.sdr=0
 ro.ril.oem.show.act=0
 ro.ril.enable.gea3=1
-ro.ril.set.mtusize=1428
+ro.ril.set.mtusize=1420
 ro.ril.enable.r8fd=1
 ro.ril.air.enabled=1
 ro.ril.wp.feature=1
-ro.cdma.data_retry_config=max_retries=infinite,0,0,60000,120000,480000,900000
+ro.cdma.data_retry_config=max_retries=infinite,26000,52000,104000,208000,416000,832000,1664000,1800000
 ro.ril.gsm.to.lte.blind.redir=1
 ro.config.svlte1x=true
 ro.gps.agps_provider=1

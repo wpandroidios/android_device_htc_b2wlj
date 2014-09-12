@@ -2,6 +2,6 @@
 
 set -e
 
-export DEVICE=m8vzw
+export DEVICE=b2wlj
 export VENDOR=htc
 ./../msm8974-common/setup-makefiles.sh $@

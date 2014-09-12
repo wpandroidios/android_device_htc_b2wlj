@@ -24,11 +24,11 @@
 $(call inherit-product, device/htc/msm8974-common/msm8974.mk)
 
 # Inherit m8vzw-specific vendor tree
-$(call inherit-product-if-exists, vendor/htc/m8vzw/m8vzw-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/b2wlj/b2wlj-vendor.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_m8vzw
-PRODUCT_DEVICE := m8vzw
-PRODUCT_BRAND := htc
+PRODUCT_NAME := full_b2wlj
+PRODUCT_DEVICE := b2wlj
+PRODUCT_BRAND := KDDI
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_MODEL := One M8
+PRODUCT_MODEL := HTC J butterfly

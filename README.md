@@ -1,4 +1,4 @@
-android_device_htc_m8vzw
+android_device_htc_b2wlj
 ========================
 
 Copyright 2014 - The CyanogenMod Project

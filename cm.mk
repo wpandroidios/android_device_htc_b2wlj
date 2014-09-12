@@ -1,10 +1,10 @@
-$(call inherit-product, device/htc/m8vzw/full_m8vzw.mk)
+$(call inherit-product, device/htc/b2wlj/full_b2wlj.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	BUILD_FINGERPRINT="htc/HTCOneM8vzw/htc_m8wl:4.4.2/KOT49H/315044.11:user/release-keys" \
-	PRIVATE_BUILD_DESC="1.12.605.11 CL315044 release-keys"
+	BUILD_FINGERPRINT="htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys" \
+	PRIVATE_BUILD_DESC="1.17.970.1 CL368778 release-keys"
 
-PRODUCT_NAME := cm_m8vzw
-PRODUCT_DEVICE := m8vzw
+PRODUCT_NAME := cm_b2wlj
+PRODUCT_DEVICE := b2wlj
 
 PRODUCT_GMS_CLIENTID_BASE := android-verizon
