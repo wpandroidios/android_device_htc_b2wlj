@@ -21,7 +21,7 @@
 # lines, full and maguro, hence its name.
 #
 
-$(call inherit-product, device/htc/msm8974-common/msm8974.mk)
+$(call inherit-product, device/htc/b2-common/msm8974.mk)
 
 # Inherit m8vzw-specific vendor tree
 $(call inherit-product-if-exists, vendor/htc/b2wlj/b2wlj-vendor.mk)

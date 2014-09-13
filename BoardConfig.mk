@@ -25,7 +25,7 @@
 # against the traditional rules of inheritance).
 
 # inherit from common msm8974
--include device/htc/msm8974-common/BoardConfigCommon.mk
+-include device/htc/b2-common/BoardConfigCommon.mk
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj
 
