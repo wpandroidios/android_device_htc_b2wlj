@@ -29,6 +29,9 @@
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj
 
+# Kernel
+ARGET_KERNEL_CONFIG := cm_b2wlj_defconfig
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # # mmcblk0p1: 00100000  00000200  "sbl1"
