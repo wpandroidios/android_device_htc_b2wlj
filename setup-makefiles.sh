@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE=m8
+export DEVICE=b2wlj
 export VENDOR=htc
 
 OUTDIR=vendor/$VENDOR/$DEVICE
@@ -99,7 +99,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter m8,\$(TARGET_DEVICE)),)
+ifneq (\$(filter b2wlj,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff

@@ -1,6 +1,6 @@
-# system.prop for m8
+# system.prop for b2
 
-ro.product.model=One M8
+ro.product.model=HTL23
 
 # RIL
 rild.libargs=-d /dev/smd0

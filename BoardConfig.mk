@@ -28,7 +28,7 @@
 # 0P6B20000 - Verizon
 # 0P6B70000 - Sprint
 
-TARGET_OTA_ASSERT_DEVICE := m8,m8wl,m8wlv,m8vzw,m8whl,m8spr
+TARGET_OTA_ASSERT_DEVICE := b2,b2wlj
 
 BOARD_VENDOR := htc
 
@@ -58,8 +58,8 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_m8_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/b2wlj/mkbootimg.mk
+TARGET_KERNEL_CONFIG := cm_b2_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
@@ -72,14 +72,14 @@ TARGET_USES_QCOM_BSP := true
 
 # Audio
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
-BOARD_AUDIO_AMPLIFIER := device/htc/m8/libaudioamp
+BOARD_AUDIO_AMPLIFIER := device/htc/b2wlj/libaudioamp
 BOARD_USES_ALSA_AUDIO := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/b2wlj/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
@@ -87,7 +87,7 @@ COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAME
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Graphics
-BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/b2wlj/configs/egl.cfg
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -130,7 +130,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/htc/m8/sepolicy
+    device/htc/b2wlj/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     app.te \
@@ -173,16 +173,16 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/b2wlj/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
+TARGET_INIT_VENDOR_LIB := libinit_b2
+TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2.c
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+BOARD_HARDWARE_CLASS := device/htc/b2wlj/cmhw
