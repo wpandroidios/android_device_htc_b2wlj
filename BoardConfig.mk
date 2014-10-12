@@ -59,7 +59,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/b2wlj/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_b2_defconfig
+TARGET_KERNEL_CONFIG := cm_b2wlj_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
@@ -178,8 +178,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_b2
-TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2.c
+TARGET_INIT_VENDOR_LIB := libinit_b2wlj
+TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.c
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools

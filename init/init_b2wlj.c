@@ -51,49 +51,25 @@ void vendor_load_properties()
     if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
         return;
 
-    property_get("ro.boot.mid", bootmid);
-
-    if (strstr(bootmid, "0P6B20000")) {
-        /* m8vzw (m8wl) */
-        cdma_properties("0", "10", "311480", "Verizon");
-        property_set("ro.build.fingerprint", "htc/HTCOneM8vzw/htc_m8wl:4.4.2/KOT49H/315044.11:user/release-keys");
-        property_set("ro.build.description", "1.12.605.11 CL315044 release-keys");
-        property_set("ro.product.device", "m8vzw");
-        property_set("ro.build.product", "m8vzw");
+        cdma_properties("0", "10", "44050", "KDDI");
+        property_set("ro.build.fingerprint", "htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys");
+        property_set("ro.build.description", "1.17.970.1 CL368778 release-keys");
+        property_set("ro.product.device", "b2wlj");
+        property_set("ro.build.product", "b2wlj");
         property_set("ro.ril.vzw.feature", "1");
-        property_set("ro.ril.oem.ecclist", "911,*911,#911");
+        property_set("ro.ril.oem.ecclist", "110,118,119,184110,184118,184119,186110,186118,186119");
         property_set("ro.ril.enable.a52", "0");
         property_set("ro.ril.enable.dtm", "0");
         property_set("ro.ril.gprsclass", "12");
         property_set("ro.ril.att.feature", "0");
         property_set("ro.ril.enable.managed.roaming", "1");
         property_set("ro.ril.oem.show.act", "0");
-        property_set("ro.ril.set.mtusize", "1428");
+        property_set("ro.ril.set.mtusize", "1420");
         property_set("ro.ril.air.enabled", "1");
         property_set("ro.ril.wp.feature", "1");
-        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
+        property_set("ro.cdma.data_retry_config", "max_retries=infinite,26000,52000,104000,208000,416000,832000,1664000,1800000");
         property_set("ro.ril.gsm.to.lte.blind.redir", "1");
         property_set("ro.config.svlte1x", "true");
-    } else if (strstr(bootmid, "0P6B70000")) {
-        /* m8spr (m8whl) */
-        cdma_properties("1", "8", "310120", "Sprint");
-        property_set("ro.build.fingerprint", "htc/sprint_wwe/htc_m8whl:4.4.2/KOT49H/326598.8:user/release-keys");
-        property_set("ro.build.description", "1.54.651.8 CL326598 release-keys");
-        property_set("ro.product.device", "m8spr");
-        property_set("ro.build.product", "m8spr");
-        property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.ril.oem.ecclist", "911");
-        property_set("ro.ril.enable.pre_r8fd=1", "1");
-        property_set("ro.ril.enable.sdr", "0");
-        property_set("ro.ril.set.mtusize", "1422");
-    } else {
-        /* m8 */
-        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8:4.4.2/KOT49H/325784.5:user/release-keys");
-        property_set("ro.build.description", "1.54.401.5 CL325784 release-keys");
-        property_set("ro.product.device", "m8");
-        property_set("ro.telephony.default_network", "9");
-        property_set("telephony.lteOnGsmDevice", "1");
-    }
 
     property_get("ro.product.device", device);
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
