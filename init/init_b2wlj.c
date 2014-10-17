@@ -54,8 +54,8 @@ void vendor_load_properties()
         cdma_properties("0", "10", "44050", "KDDI");
         property_set("ro.build.fingerprint", "htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys");
         property_set("ro.build.description", "1.17.970.1 CL368778 release-keys");
-        property_set("ro.product.device", "b2wlj");
-        property_set("ro.build.product", "b2wlj");
+        property_set("ro.product.device", "htc_b2wlj");
+        property_set("ro.build.product", "htc_b2wlj");
         property_set("ro.ril.vzw.feature", "1");
         property_set("ro.ril.oem.ecclist", "110,118,119,184110,184118,184119,186110,186118,186119");
         property_set("ro.ril.enable.a52", "0");
