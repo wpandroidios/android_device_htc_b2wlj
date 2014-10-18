@@ -180,8 +180,5 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_b2wlj
 TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.c
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
-
 # Hardware
 BOARD_HARDWARE_CLASS := device/htc/b2wlj/cmhw
