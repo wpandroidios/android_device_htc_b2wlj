@@ -28,7 +28,7 @@
 # 0P6B20000 - Verizon
 # 0P6B70000 - Sprint
 
-TARGET_OTA_ASSERT_DEVICE := b2,b2wlj
+TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj
 
 BOARD_VENDOR := htc
 
