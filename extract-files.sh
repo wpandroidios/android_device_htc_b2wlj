@@ -40,6 +40,6 @@ if [ -f ../$DEVICE/proprietary-files.txt ]; then
   done
 fi
 
-chmod 755 $BASE/blobs/*/bin/*
+chmod 755 $BASE/bin/*
 
 ../$DEVICE/setup-makefiles.sh
