@@ -257,6 +257,7 @@ vendor/lib/libDivxDrm.so
 vendor/lib/libdrmtime.so
 vendor/lib/libdrmfs.so
 vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libwvdrm_L1.so
 
 # WIRELESS
