@@ -289,6 +289,9 @@ lib/libbt-utils.so
 bin/hci_qcomm_init
 vendor/lib/libbt-vendor.so
 
+#App
+priv-app/EasyAccessService.apk
+
 # etc
 lib/libalIAF.so
 lib/libprojector.so

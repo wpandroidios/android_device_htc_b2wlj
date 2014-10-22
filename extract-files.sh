@@ -37,6 +37,11 @@ if [ -f ../$DEVICE/proprietary-files.txt ]; then
     else
       cp $SRC/system/$FILE $BASE/$FILE
     fi
+    if [ "$FILE" = "priv-app/EasyAccessService.apk" ]; then
+      mkdir $BASE/"app"
+      cp $BASE/$FILE $BASE/"app/EasyAccessService.apk"
+      rm -rf $BASE/$DIR
+    fi
   done
 fi
 

@@ -33,7 +33,10 @@ COUNT=`expr $COUNT - $DISM`
 for FILE in `egrep -v '(^#|^$)' ../$DEVICE/proprietary-files.txt`; do
   COUNT=`expr $COUNT - 1`
   if [[ ! "$FILE" =~ ^-.* ]]; then
-    echo "        $OUTDIR/proprietary/$FILE:/system/$FILE$LINEEND" >> $MAKEFILE
+      if [ "$FILE" = "priv-app/EasyAccessService.apk" ]; then
+          FILE="app/EasyAccessService.apk"
+      fi
+          echo "        $OUTDIR/proprietary/$FILE:/system/$FILE$LINEEND" >> $MAKEFILE
   fi
 done
 
