@@ -162,6 +162,7 @@ etc/firmware/leia_pm4_470.fw
 lib/libc2dcolorconvert.so
 lib/libEGL.so
 lib/egl/libGLES_android.so
+lib/libRS.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
