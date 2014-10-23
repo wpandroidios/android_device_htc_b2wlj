@@ -111,6 +111,12 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
+# permissions for NFC
+    chmod 0600 /dev/pn544
+    chown nfc nfc /dev/pn544
+	setprop debug.nfc.fw_download "true"
+	setprop debug.nfc.fw_boot_download "false"
+
     # We will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
 
@@ -145,6 +151,10 @@ on post-fs-data
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
+
+    mkdir /nfc_record 0700 system system
+    wait /dev/block/platform/msm_sdcc.1/by-name/nfc_record
+    mount ext4 emmc@nfc_record /nfc_record nosuid nodev noatime barrier=1
 
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
@@ -203,6 +213,17 @@ on boot
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
     write /sys/module/msm_thermal/core_control/enabled 1
+
+on boot
+    chmod 0770 /nfc_record
+    chown system system /nfc_record
+    start imsqmidaemon
+    insmod /system/lib/modules/adsprpc.ko
+
+#Felica +
+    mkdir /data/system 0775 system system
+    exec system/bin/felica_startup
+#Felica -
 
     chmod 0644 /proc/cmdline
 
