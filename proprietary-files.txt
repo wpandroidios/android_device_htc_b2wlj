@@ -231,6 +231,7 @@ vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libqmi.so
@@ -272,15 +273,9 @@ vendor/firmware/keymaster.mdt
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libDivxDrm.so
-vendor/lib/libdrmtime.so
 vendor/lib/libdrmfs.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libwvdrm_L1.so
 
 # WIRELESS
-etc/wifi/wpa_supplicant.conf
 lib/libbt-aptx-4.0.3.so
 lib/libbt-hci.so
 lib/libbt-utils.so
@@ -323,7 +318,6 @@ bin/cir_fw_update
 bin/htc_ebdlogd
 bin/qseecomd
 bin/ptt_socket_app
-bin/wcnss_service
 etc/hldm.bin
 etc/hltrd.bin
 etc/hltof.bin
@@ -337,7 +331,6 @@ etc/firmware/alIAF_InData_4M2M
 etc/firmware/widevine.mdt
 etc/firmware/widevine.b01
 etc/firmware/widevine.b03
-vendor/lib/libqmi_csvt_srvc.so
 etc/firmware/mirlink.b00
 etc/firmware/mirlink.b01
 etc/firmware/mirlink.b02
