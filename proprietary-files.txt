@@ -276,6 +276,7 @@ vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/libdrmfs.so
 
 # WIRELESS
+bin/radish
 lib/libbt-aptx-4.0.3.so
 lib/libbt-hci.so
 lib/libbt-utils.so
