@@ -80,6 +80,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/b2wlj/bluetooth
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
+# Font
+EXTENDED_FONT_FOOTPRINT := true
+
 # Graphics
 BOARD_EGL_CFG := device/htc/b2wlj/configs/egl.cfg
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
