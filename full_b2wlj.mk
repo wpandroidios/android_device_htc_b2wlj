@@ -21,6 +21,10 @@
 # lines, full and maguro, hence its name.
 #
 
+# dt.img
+PRODUCT_COPY_FILES += \
+    device/htc/b2wlj/dt_image/b2wlj/dt.img:dt.img \
+
 # Inherit b2-specific vendor tree
 $(call inherit-product-if-exists, vendor/htc/b2wlj/b2wlj-vendor.mk)
 
