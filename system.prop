@@ -85,6 +85,10 @@ ro.sf.lcd_density=480
 # Input
 ro.input.noresample=1
 
+# Recovery
+ro.cwm.enable_key_repeat=true
+ro.cwm.repeatable_keys=114,115
+
 # USB
 persist.sys.usb.config=mtp
 
