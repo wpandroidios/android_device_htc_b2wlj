@@ -28,6 +28,9 @@ PRODUCT_COPY_FILES += \
 # Inherit b2-specific vendor tree
 $(call inherit-product-if-exists, vendor/htc/b2wlj/b2wlj-vendor.mk)
 
+# FeliCa vendor tree
+$(call inherit-product-if-exists, vendor/htc/felica-common/felica-common-vendor.mk)
+
 # Inherit from b2
 $(call inherit-product, device/htc/b2wlj/device.mk)
 
