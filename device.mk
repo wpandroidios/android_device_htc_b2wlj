@@ -18,7 +18,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-$(call inherit-product-if-exists, vendor/htc/b2-common/b2-common-vendor.mk)
 
 # overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/b2wlj/overlay
