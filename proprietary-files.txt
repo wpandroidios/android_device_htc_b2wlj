@@ -55,6 +55,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 
 # Camera
+bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
@@ -82,11 +83,21 @@ vendor/lib/libchromatix_imx214_hfr.so
 vendor/lib/libchromatix_imx214_hfr_60fps.so
 vendor/lib/libchromatix_imx214_preview.so
 vendor/lib/libchromatix_imx214_zoe.so
+lib/libalDE_SDE_TWO.so
+lib/libalDE.so
+lib/libalDynamicWarping_SDW_TWO.so
+lib/libalDynamicWarping.so
+lib/libalIAF.so
+lib/libawb_calibration.so
+lib/libcamera_aec.so
+lib/libcamera_af.so
+lib/libcamera_awb.so
 lib/libmmcamera_interface.so
 lib/libmmcamera_rubik.so
 lib/libcamerapp.so
 lib/hw/camera.msm8974.so
 lib/libcameraface.so
+lib/libgps.utils.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -143,6 +154,9 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libjpegehw.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libmmjpeg.so
+vendor/lib/liblbs_core.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/liboemcamera.so
 lib/libposteffect.so
 lib/libqomx_core.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
