@@ -163,7 +163,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/m8/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/b2wlj/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     cir_fw_update.te \
