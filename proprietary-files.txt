@@ -91,12 +91,14 @@ lib/libalDynamicWarping_SDW_TWO.so
 lib/libalDynamicWarping.so
 lib/libalIAF.so
 lib/libawb_calibration.so
+lib/libBeautyChat.so
 lib/libcamera_aec.so
 lib/libcamera_af.so
 lib/libcamera_awb.so
 lib/libmmcamera_interface.so
 lib/libmmcamera_rubik.so
 lib/libcamerapp.so
+lib/libdrmdecrypt.so
 lib/hw/camera.msm8974.so
 lib/libcameraface.so
 lib/libtuning_aec_imx214_hdr.so
@@ -174,6 +176,7 @@ etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 etc/firmware/a330_pfp.fw
 etc/firmware/a330_pm4.fw
+etc/firmware/alIAF_InData_4M2M
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
 lib/libc2dcolorconvert.so
@@ -313,7 +316,6 @@ lib/libcnefeatureconfig.so
 lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
 lib/libBeautyChat.so
-lib/libawb_calibration.so
 vendor/lib/libHevcSwDecoder.so
 vendor/lib/libmmQSM.so
 vendor/lib/libchromatix_s5k5e_hdr.so
@@ -327,7 +329,7 @@ vendor/lib/libqcgesture.so
 vendor/lib/libgeofence.so
 vendor/lib/libv8.so
 vendor/lib/libsecureui.so
-vendor/lib/liboemcrypto.so
+vendor/lib/libposteffect.so
 bin/irsc_util
 bin/readDapCert
 bin/ATFWD-daemon
