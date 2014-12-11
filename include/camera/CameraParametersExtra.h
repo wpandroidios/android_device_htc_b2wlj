@@ -123,4 +123,3 @@ const char *CameraParameters::getZsl() const { return get("zsl");};
     void setBrightnessLumaTargetSet(int brightness, int luma); \
     void setZsl(const char *sauce); \
     const char *getZsl() const;
-
