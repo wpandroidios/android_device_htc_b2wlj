@@ -113,6 +113,10 @@ static char *camera_fixup_getparams(int id, const char *settings)
     params.dump();
 #endif
 
+    if (params.get(android::CameraParameters::KEY_CAPTURE_MODE)) {
+        captureMode = params.get(android::CameraParameters::KEY_CAPTURE_MODE);
+    }
+
     if (params.get(android::CameraParameters::KEY_ROTATION)) {
         rotation = atoi(params.get(android::CameraParameters::KEY_ROTATION));
     }
@@ -212,6 +216,23 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     /* Enable fixed fps mode */
     params.set("preview-frame-rate-mode", "frame-rate-fixed");
+
+    if (!isVideo && id == 0) {
+        /* Disable OIS, set continuous burst to prevent crash */
+        params.set(android::CameraParameters::KEY_CONTIBURST_TYPE, "unlimited");
+        params.set(android::CameraParameters::KEY_OIS_SUPPORT, "false");
+        params.set(android::CameraParameters::KEY_OIS_MODE, "off");
+
+        /* Enable HDR */
+        if (!strcmp(sceneMode, android::CameraParameters::SCENE_MODE_HDR)) {
+            params.set(android::CameraParameters::KEY_SCENE_MODE, "off");
+            params.set(android::CameraParameters::KEY_CAPTURE_MODE, "hdr");
+        } else {
+            params.set(android::CameraParameters::KEY_CAPTURE_MODE, "normal");
+            params.set(android::CameraParameters::KEY_ZSL, "on");
+            params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
+        }
+    }
 
     if (isVideo && id == 1) {
         /* Front camera only supports infinity */
