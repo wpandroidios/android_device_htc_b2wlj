@@ -214,6 +214,7 @@
 # IR
 /sys/class/htc_cir/cir/reset_cir    0660    system    system
 /sys/class/htc_cir/cir/enable_cir   0660    system    system
+/sys/class/htc_cir/cir/enable_learn 0660    system    system
 /dev/ttyHSL2                        0660    system    system
 
 # felica device file nodes
