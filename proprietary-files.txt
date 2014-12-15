@@ -96,7 +96,15 @@ lib/libmmcamera_rubik.so
 lib/libcamerapp.so
 lib/hw/camera.msm8974.so
 lib/libcameraface.so
-lib/libgps.utils.so
+lib/libtuning_aec_imx214_hdr.so
+lib/libtuning_aec_imx214_night.so
+lib/libtuning_aec_imx214_video.so
+lib/libtuning_aec_imx214_videoHFR.so
+lib/libtuning_aec_imx214_video_60fps.so
+lib/libtuning_aec_imx214_zoe.so
+lib/libtuning_aec_imx214_zsl.so
+lib/libtuning_af_lc898212_imx214.so
+lib/libtuning_awb_imx214.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -196,6 +204,7 @@ etc/agps_rm
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 lib/libloc_api_v02.so
+lib/libgps.utils.so
 
 # Media
 etc/firmware/venus.b01
