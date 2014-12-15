@@ -63,7 +63,6 @@ etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 etc/firmware/lscbuffer_rev2.bin
-vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libadsprpc.so
 vendor/lib/libchromatix_ov2722_subcam_default_video.so
 vendor/lib/libchromatix_ov2722_subcam_common.so
@@ -139,16 +138,10 @@ vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libcneutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libcneconn.so
-vendor/lib/libprofiler_msmadc.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/liblistensoundmodel.so
 vendor/lib/libacdbrtac.so
 vendor/lib/librpmb.so
-vendor/lib/libxml.so
-vendor/lib/libssd.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libaudioalsa.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libjpegehw.so
