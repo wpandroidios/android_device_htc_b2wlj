@@ -147,7 +147,6 @@ vendor/lib/libcneutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libqomx_jpegdec.so
-vendor/lib/liblistensoundmodel.so
 vendor/lib/libacdbrtac.so
 vendor/lib/librpmb.so
 vendor/lib/libmmipl.so
