@@ -50,6 +50,7 @@ etc/tfa/voip_l.drc
 etc/tfa/voip_l.eq
 etc/tfa/voip_l.preset
 etc/tfa/voip.preset
+-framework/htcirlibs.jar
 vendor/lib/libacdbloader.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
@@ -303,6 +304,7 @@ bin/hci_qcomm_init
 vendor/lib/libbt-vendor.so
 
 #App
+app/CIRModule.apk
 priv-app/EasyAccessService.apk
 
 # etc
@@ -313,6 +315,7 @@ lib/libalDE.so
 lib/libcnefeatureconfig.so
 lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
+lib/libhtcirinterface_jni.so
 lib/libBeautyChat.so
 lib/libawb_calibration.so
 vendor/lib/libHevcSwDecoder.so
