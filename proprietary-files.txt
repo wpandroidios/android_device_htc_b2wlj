@@ -232,6 +232,9 @@ lib/libOmxVdec.so
 lib/libOmxVdecHevc.so
 lib/libOmxVenc.so
 vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 
 # Power
 bin/mpdecision
