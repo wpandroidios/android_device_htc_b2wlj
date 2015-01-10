@@ -361,6 +361,7 @@ bin/ptt_socket_app
 etc/hldm.bin
 etc/hltrd.bin
 etc/hltof.bin
+bin/hvdcp
 etc/cir.img
 etc/tfa/tfa9887.config
 etc/tfa/tfa9887MFG.patch
