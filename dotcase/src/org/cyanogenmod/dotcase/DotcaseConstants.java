@@ -47,7 +47,8 @@ public class DotcaseConstants {
         FACEBOOK,
         FB_MESSENGER,
         KIK,
-        GROUPME
+        GROUPME,
+        GPLUS
     }
 
     /**
@@ -181,7 +182,7 @@ public class DotcaseConstants {
         notificationMap.put("io.avocado.android", Notification.COUPLES);
         notificationMap.put("kr.co.vcnc.android.couple", Notification.COUPLES); // Between
 
-        // Other apps
+	// Other apps
         notificationMap.put("com.google.android.gm", Notification.GMAIL);
         notificationMap.put("com.google.android.talk", Notification.HANGOUTS);
         notificationMap.put("com.snapchat.android", Notification.SNAPCHAT);
@@ -214,6 +215,16 @@ public class DotcaseConstants {
         {0, 3, 3, 3, 3, 3, 0},
         {0, 0, 0, 3, 3, 0, 0},
         {0, 0, 0, 3, 0, 0, 0}};
+
+    static final int[][] gPlusSprite = {
+        {0, 0, 0, 0, 0, 0, 0},
+        {0, 2, 2, 2, 2, 2, 0},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 1, 1, 1, 1, 1, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {0, 2, 2, 2, 2, 2, 0}};
 
     static final int[][] mmsSprite = {
         {0, 0, 0, 0, 0, 0, 0},
@@ -363,8 +374,8 @@ public class DotcaseConstants {
                 return kikSprite;
             case FB_MESSENGER:
                 return facebookMessengerSprite;
-            case GROUPME:
-                return groupMeSprite;
+            case DOTS:
+                return dotsSprite;
             default:
                 return null;
         }

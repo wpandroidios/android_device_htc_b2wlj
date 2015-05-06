@@ -29,6 +29,7 @@
 # 0P6B70000 - Sprint
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj
+TARGET_BOARD_INFO_FILE ?= device/htc/b2wlj/board-info.txt
 
 BOARD_VENDOR := htc
 
@@ -77,21 +78,15 @@ AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/b2wlj/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0},'
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Charge mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
-
-# Font
-EXTENDED_FONT_FOOTPRINT := true
-
 # Graphics
-BOARD_EGL_CFG := device/htc/b2wlj/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -107,9 +102,6 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/b2wlj/include
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Logging
-TARGET_USES_LOGD := false
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8974

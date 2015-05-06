@@ -228,19 +228,6 @@ on boot
     write /sys/devices/system/cpu/cpu3/online 1
     write /sys/module/msm_thermal/core_control/enabled 1
 
-on boot
-    chmod 0770 /nfc_record
-    chown system system /nfc_record
-    start imsqmidaemon
-    insmod /system/lib/modules/adsprpc.ko
-
-#Felica +
-    mkdir /data/system 0775 system system
-    exec system/bin/felica_startup
-#Felica -
-
-    chmod 0644 /proc/cmdline
-
     # bluetooth
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
@@ -574,6 +561,14 @@ on property:bluetooth.sap.status=running
 on property:bluetooth.sap.status=stopped
     stop bt-sap
 
+on property:crypto.driver.load=1
+     insmod /system/lib/modules/qce.ko
+     insmod /system/lib/modules/qcedev.ko
+
+on property:crypto.driver.load=0
+     exec /system/bin/rmmod qcedev.ko
+     exec /system/bin/rmmod qce.ko
+
 on property:init.svc.bootanim=stopped
     # Overwrite ActivityManager's low memory killer settings
     write /sys/module/lowmemorykiller/parameters/adj "2,4,7,8,9,12"
@@ -608,7 +603,7 @@ on property:persist.usb.hvdcp.detect=false
 
 # Performance
 on property:service.bootanim.exit=1
-    write /sys/module/lpm_levels/enable_low_power/l2 "4"
+    write /sys/module/lpm_resources/enable_low_power/l2 "4"
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled "1"
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled "1"
     write /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled "1"
@@ -647,7 +642,6 @@ on property:service.bootanim.exit=1
     chmod 664 /sys/devices/system/cpu/cpu3/online
     write /dev/cpuctl/apps/cpu.notify_on_migrate "1"
 
-    write /sys/module/cpu_boost/parameters/boost_ms "20"
     write /sys/module/cpu_boost/parameters/sync_threshold "1728000"
     write /sys/module/cpu_boost/parameters/input_boost_freq "1497600"
     write /sys/module/cpu_boost/parameters/input_boost_ms "40"
@@ -664,6 +658,11 @@ on property:init.svc.bootanim=stopped
 
 # CM Performance Profiles
 on property:sys.perf.profile=0
+    stop mpdecision
+    stop thermal-engine
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
     write /sys/class/devfreq/qcom,cpubw.42/governor "powersave"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor conservative
@@ -671,8 +670,14 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
     start mpdecision
+    start thermal-engine
 
 on property:sys.perf.profile=1
+    stop mpdecision
+    stop thermal-engine
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
     write /sys/class/devfreq/qcom,cpubw.42/governor "msm_cpufreq"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
@@ -694,10 +699,11 @@ on property:sys.perf.profile=1
 
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
     start mpdecision
+    start thermal-engine
 
 on property:sys.perf.profile=2
     stop mpdecision
-    write /sys/devices/system/cpu/cpu0/online 1
+    stop thermal-engine
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -707,3 +713,4 @@ on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor performance
+    start thermal-engine

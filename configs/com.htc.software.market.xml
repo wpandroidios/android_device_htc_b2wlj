@@ -19,4 +19,5 @@
     <feature name="com.htc.software.Sense6.0" />
     <feature name="com.htc.software.B2WLJ" />
     <feature name="com.htc.software.hdk" />
+    <feature name="com.htc.software.hdk2" />
 </permissions>

@@ -25,7 +25,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/b2wlj/overlay
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
-TARGET_BOOTANIMATION_HALF_RES := true
 
 # Device uses ultra-high-density artwork where available
 PRODUCT_AAPT_CONFIG := hdpi xhdpi xxhdpi
@@ -204,6 +203,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8974
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
@@ -213,8 +216,8 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # Variant linking script
-PRODUCT_PACKAGES += \
-    makelinks.sh
+PRODUCT_COPY_FILES += \
+    device/htc/b2wlj/releasetools/makelinks.sh:install/bin/makelinks.sh
 
 # Wifi firmware
 PRODUCT_PACKAGES += \
@@ -227,7 +230,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
@@ -236,4 +238,5 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     dhcpcd.conf \
     libwpa_client \
-    wpa_supplicant
+    wpa_supplicant \
+    wpa_supplicant.conf
