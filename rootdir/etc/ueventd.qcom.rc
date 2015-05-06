@@ -50,7 +50,7 @@
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
 
-/dev/radio0               0640   fm_radio   fm_radio
+/dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
@@ -112,13 +112,12 @@
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
-/dev/time_helper          0660   system     camera
 /dev/msm_vidc_reg         0660   system     audio
 /dev/msm_vidc_dec         0660   system     audio
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0600   root       root
+/dev/hw_random            0660   system     system
 /dev/adsprpc-smd          0664   system     system
 /dev/htc_msgservice       0660   system     system
 /dev/simlock              0660   radio      radio
@@ -197,7 +196,6 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
-/dev/rfkill               0660   root       wifi
 
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
@@ -216,8 +214,8 @@
 # IR
 /sys/class/htc_cir/cir/reset_cir    0660    system    system
 /sys/class/htc_cir/cir/enable_cir   0660    system    system
-/sys/class/htc_cir/cir/enable_learn 0660    system    system
 /dev/ttyHSL2                        0660    system    system
+
 
 # felica device file nodes
 /dev/felica            0660   felicaclient   felicaclient

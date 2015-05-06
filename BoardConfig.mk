@@ -29,7 +29,6 @@
 # 0P6B70000 - Sprint
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj
-TARGET_BOARD_INFO_FILE ?= device/htc/b2wlj/board-info.txt
 
 BOARD_VENDOR := htc
 
@@ -48,45 +47,53 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
+
+# Charge mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000 --dt device/htc/b2wlj/dt_image/b2wlj/dt.img
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/b2wlj/mkbootimg.mk
 TARGET_KERNEL_CONFIG := cm_b2wlj_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-new
+TARGET_QCOM_MEDIA_VARIANT := caf-new
+TARGET_USES_QCOM_BSP := true
 
 # Audio
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 # BOARD_AUDIO_AMPLIFIER := device/htc/b2wlj/libaudioamp
 BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
-AUDIO_FEATURE_ENABLED_FM := true
-AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
-AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/b2wlj/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0},'
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# Charge mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+
 # Graphics
-BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/b2wlj/configs/egl.cfg
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -96,9 +103,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
-
-# Includes
-TARGET_SPECIFIC_HEADER_PATH := device/htc/b2wlj/include
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -130,6 +134,32 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/htc/m8/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    app.te \
+    bluetooth.te \
+    device.te \
+    domain.te \
+    drmserver.te \
+    file_contexts \
+    file.te \
+    hci_init.te \
+    healthd.te \
+    init_shell.te \
+    init.te \
+    keystore.te \
+    kickstart.te \
+    mediaserver.te \
+    rild.te \
+    surfaceflinger.te \
+    system.te \
+    ueventd.te \
+    wpa_socket.te \
+    wpa.te
+
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
@@ -141,9 +171,7 @@ BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1476395008
 BOARD_FLASH_BLOCK_SIZE := 131072
-TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -155,39 +183,13 @@ BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_FSTAB := device/htc/b2wlj/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
-# SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/b2wlj/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    cir_fw_update.te \
-    device.te \
-    file_contexts \
-    file.te \
-    hcheck.te \
-    init.te \
-    kcal_dev.te \
-    kernel.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    platform_app.te \
-    property_contexts \
-    recovery.te \
-    radio.te \
-    rmt_storage.te \
-    system_app.te \
-    system_server.te \
-    tap2wake_dev.te \
-    thermal-engine.te \
-    ueventd.te \
-    vibe_dev.te \
-    vold.te
-
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_b2wlj
 TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.c
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/htc/b2wlj/cmhw

@@ -58,6 +58,9 @@ public class DrawView extends View {
             drawNumber(canvas);
             drawRinger(canvas);
         } else {
+            if (Dotcase.sStatus.isTorch()) {
+                dotcaseDrawSprite(DotcaseConstants.torchSprite, 19, 22, canvas);
+            }
             drawTime(canvas);
 
             // Check notifications each cycle before displaying them
@@ -401,3 +404,4 @@ public class DrawView extends View {
         boolean am;
     }
 }
+

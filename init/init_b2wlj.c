@@ -70,25 +70,6 @@ void vendor_load_properties()
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,26000,52000,104000,208000,416000,832000,1664000,1800000");
         property_set("ro.ril.gsm.to.lte.blind.redir", "1");
         property_set("ro.config.svlte1x", "true");
-    } else if (strstr(bootmid, "0P6B70000")) {
-        /* m8spr (m8whl) */
-        cdma_properties("1", "8", "310120", "Sprint");
-        property_set("ro.build.fingerprint", "htc/sprint_wwe/htc_m8whl:4.4.2/KOT49H/326598.8:user/release-keys");
-        property_set("ro.build.description", "1.54.651.8 CL326598 release-keys");
-        property_set("ro.product.device", "m8spr");
-        property_set("ro.build.product", "m8spr");
-        property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.ril.oem.ecclist", "911");
-        property_set("ro.ril.enable.pre_r8fd=1", "1");
-        property_set("ro.ril.enable.sdr", "0");
-        property_set("ro.ril.set.mtusize", "1422");
-    } else {
-        /* m8 */
-        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8:4.4.2/KOT49H/325784.5:user/release-keys");
-        property_set("ro.build.description", "1.54.401.5 CL325784 release-keys");
-        property_set("ro.product.device", "m8");
-        property_set("ro.telephony.default_network", "9");
-        property_set("telephony.lteOnGsmDevice", "1");
     }
 
     property_get("ro.product.device", device);

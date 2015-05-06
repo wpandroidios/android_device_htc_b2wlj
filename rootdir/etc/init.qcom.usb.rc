@@ -166,10 +166,6 @@ on property:sys.usb.config=accessory,audio_source,adb
     write /sys/devices/platform/android_usb/usb_function_switch 139266
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.config=charging
-    write /sys/devices/platform/android_usb/usb_function_switch 0
-    setprop sys.usb.state ${sys.usb.config}
-
 # Used to set USB configuration at boot and to switch the configuration
 # when changing the default configuration
 #on property:persist.sys.usb.config=*
@@ -877,3 +873,4 @@ on property:bugreport.debug=1
 
 on property:bugreport.debug=0
     write /sys/class/android_usb/android0/bugreport_debug 0
+
