@@ -216,10 +216,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Variant linking script
-PRODUCT_COPY_FILES += \
-    device/htc/b2wlj/releasetools/makelinks.sh:install/bin/makelinks.sh
-
 # Wifi firmware
 PRODUCT_PACKAGES += \
     wcnss_service
