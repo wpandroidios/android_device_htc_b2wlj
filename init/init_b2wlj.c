@@ -70,7 +70,6 @@ void vendor_load_properties()
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,26000,52000,104000,208000,416000,832000,1664000,1800000");
         property_set("ro.ril.gsm.to.lte.blind.redir", "1");
         property_set("ro.config.svlte1x", "true");
-    }
 
     property_get("ro.product.device", device);
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);

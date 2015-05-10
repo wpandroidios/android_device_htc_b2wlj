@@ -47,7 +47,8 @@ public class DotcaseConstants {
         FACEBOOK,
         FB_MESSENGER,
         KIK,
-        GROUPME
+        GROUPME,
+        GPLUS
     }
 
     /**
@@ -182,6 +183,7 @@ public class DotcaseConstants {
         notificationMap.put("kr.co.vcnc.android.couple", Notification.COUPLES); // Between
 
         // Other apps
+        notificationMap.put("com.google.android.apps.plus", Notification.GPLUS);
         notificationMap.put("com.google.android.gm", Notification.GMAIL);
         notificationMap.put("com.google.android.talk", Notification.HANGOUTS);
         notificationMap.put("com.snapchat.android", Notification.SNAPCHAT);
@@ -214,6 +216,16 @@ public class DotcaseConstants {
         {0, 3, 3, 3, 3, 3, 0},
         {0, 0, 0, 3, 3, 0, 0},
         {0, 0, 0, 3, 0, 0, 0}};
+
+    static final int[][] gPlusSprite = {
+        {0, 0, 0, 0, 0, 0, 0},
+        {0, 2, 2, 2, 2, 2, 0},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 1, 1, 1, 1, 1, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {2, 2, 2, 1, 2, 2, 2},
+        {0, 2, 2, 2, 2, 2, 0}};
 
     static final int[][] mmsSprite = {
         {0, 0, 0, 0, 0, 0, 0},
@@ -365,6 +377,8 @@ public class DotcaseConstants {
                 return facebookMessengerSprite;
             case GROUPME:
                 return groupMeSprite;
+            case GPLUS:
+                return gPlusSprite;
             default:
                 return null;
         }
@@ -889,17 +903,6 @@ public class DotcaseConstants {
     /**
      * Various sprites
      */
-
-    static final int[][] torchSprite = {
-        {0, 7, 7, 7, 7, 0},
-        {7, 7, 7, 7, 7, 7},
-        {7, 7, 7, 7, 7, 7},
-        {7, 7, 7, 7, 7, 7},
-        {7, 7, 7, 7, 7, 7},
-        {0, 7, 7, 7, 7, 0},
-        {0, 8, 8, 8, 8, 0},
-        {0, 8, 8, 8, 8, 0},
-        {0, 8, 8, 8, 8, 0}};
 
     static final int[][] handsetSprite = {
         {3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3},
