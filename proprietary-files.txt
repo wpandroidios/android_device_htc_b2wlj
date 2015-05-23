@@ -195,7 +195,6 @@ etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
 lib/libc2dcolorconvert.so
 lib/libEGL.so
-lib/egl/libGLES_android.so
 lib/libRS.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
@@ -204,10 +203,8 @@ vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libC2D2.so
-vendor/lib/libc2d2_z180.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30.so
-vendor/lib/libc2d30-a4xx.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
@@ -287,7 +284,6 @@ lib/hw/sensors.msm8974.so
 # Time
 bin/time_daemon
 vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
 
 # TrustZone
 etc/firmware/hcheck.b00
@@ -319,7 +315,6 @@ lib/libbt-aptx-4.0.3.so
 lib/libbt-hci.so
 lib/libbt-utils.so
 bin/hci_qcomm_init
-vendor/lib/libbt-vendor.so
 
 #App
 app/CIRModule.apk
@@ -335,20 +330,11 @@ lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
 lib/libhtcirinterface_jni.so
 lib/libBeautyChat.so
-vendor/lib/libHevcSwDecoder.so
-vendor/lib/libmmQSM.so
 vendor/lib/libchromatix_s5k5e_hdr.so
-vendor/lib/libdsucsd.so
-vendor/lib/libepdsp.so
-vendor/lib/libconfigdb.so
-vendor/lib/libCommandSvc.so
 vendor/lib/libscve_stub.so
 vendor/lib/libscve.so
 vendor/lib/libqcgesture.so
 vendor/lib/libgeofence.so
-vendor/lib/libv8.so
-vendor/lib/libsecureui.so
-vendor/lib/libposteffect.so
 bin/irsc_util
 bin/readDapCert
 bin/ATFWD-daemon
@@ -382,4 +368,3 @@ etc/firmware/dxhdcp2.b01
 etc/firmware/dxhdcp2.b02
 etc/firmware/dxhdcp2.b03
 etc/firmware/dxhdcp2.mdt
-vendor/lib/libDxHdcp.so
