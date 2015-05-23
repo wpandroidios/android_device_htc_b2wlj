@@ -38,8 +38,6 @@ etc/tfa/tfa9895.patch
 etc/tfa/tfa9895.speaker
 etc/tfa/voice.drc
 etc/tfa/voice.eq
-etc/tfa/voice_l.drc
-etc/tfa/voice_l.eq
 etc/tfa/voice_l.preset
 etc/tfa/voice.preset
 etc/tfa/voiceWB.eq
@@ -216,7 +214,6 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 
 # GPS
-etc/agps_rm
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 lib/libloc_api_v02.so
@@ -240,7 +237,6 @@ lib/libOmxCore.so
 lib/libOmxEvrcEnc.so
 lib/libOmxQcelp13Enc.so
 lib/libOmxVdec.so
-lib/libOmxVdecHevc.so
 lib/libOmxVenc.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
@@ -294,11 +290,6 @@ etc/firmware/hcheck.mdt
 bin/hcheck
 
 # DRM
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.mdt
 vendor/firmware/keymaster.b00
 vendor/firmware/keymaster.b03
 vendor/firmware/keymaster.b01
@@ -311,21 +302,16 @@ vendor/lib/libdrmfs.so
 
 # WIRELESS
 bin/radish
-lib/libbt-aptx-4.0.3.so
-lib/libbt-hci.so
-lib/libbt-utils.so
 bin/hci_qcomm_init
 
 #App
 app/CIRModule.apk
-priv-app/EasyAccessService.apk
+#priv-app/EasyAccessService.apk
 
 # etc
 lib/libalIAF.so
-lib/libprojector.so
 lib/hw/consumerir.default.so
 lib/libalDE.so
-lib/libcnefeatureconfig.so
 lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
 lib/libhtcirinterface_jni.so
@@ -336,12 +322,9 @@ vendor/lib/libscve.so
 vendor/lib/libqcgesture.so
 vendor/lib/libgeofence.so
 bin/irsc_util
-bin/readDapCert
 bin/ATFWD-daemon
-bin/cand
 bin/adsprpcd
 bin/cir_fw_update
-bin/htc_ebdlogd
 bin/qseecomd
 bin/ptt_socket_app
 etc/hldm.bin
@@ -358,13 +341,3 @@ etc/firmware/alIAF_InData_4M2M
 etc/firmware/widevine.mdt
 etc/firmware/widevine.b01
 etc/firmware/widevine.b03
-etc/firmware/mirlink.b00
-etc/firmware/mirlink.b01
-etc/firmware/mirlink.b02
-etc/firmware/mirlink.b03
-etc/firmware/mirlink.mdt
-etc/firmware/dxhdcp2.b00
-etc/firmware/dxhdcp2.b01
-etc/firmware/dxhdcp2.b02
-etc/firmware/dxhdcp2.b03
-etc/firmware/dxhdcp2.mdt
