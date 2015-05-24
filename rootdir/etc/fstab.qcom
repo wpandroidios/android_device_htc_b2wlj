@@ -28,4 +28,4 @@
 /devices/platform/xhci-hcd*                         auto             auto    defaults                                                                    voldmanaged=usbdisk:auto,noemulatedsd
 
 # ZRAM
-/dev/block/zram0         none            swap    defaults       
+#/dev/block/zram0         none            swap    defaults       
