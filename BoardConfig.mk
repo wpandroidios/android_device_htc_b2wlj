@@ -21,12 +21,8 @@
 #
 
 # Model Ids
-# 0P6B10000 - International
-# 0P6B12000 - AT&T/Dev Edition
-# 0P6B13000 - T-Mobile
-# 0P6B16000 - Telus/Rogers (Canada)
-# 0P6B20000 - Verizon
-# 0P6B70000 - Sprint
+# 0PAG10000 - KDDI
+# 0PAG20000 - International
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj
 TARGET_BOARD_INFO_FILE ?= device/htc/b2wlj/board-info.txt
