@@ -85,8 +85,10 @@ vendor/lib/libchromatix_imx214_preview.so
 vendor/lib/libchromatix_imx214_zoe.so
 lib/libalDE_SDE_TWO.so
 lib/libalDE.so
+lib/libalDE_REC.so
 lib/libalDynamicWarping_SDW_TWO.so
 lib/libalDynamicWarping.so
+lib/libalDynamicWarping_REC.so
 lib/libalIAF.so
 lib/libawb_calibration.so
 lib/libBeautyChat.so
@@ -122,7 +124,6 @@ lib/libtuning_awb_ov2722_subcam.so
 lib/libtuning_awb_s5k5e.so
 lib/libtuning_awb_s5k5e_fov65.so
 vendor/lib/libacdbmapper.so
-vendor/lib/libOmxAacDec.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -159,7 +160,6 @@ vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
-vendor/lib/libcneutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libqomx_jpegdec.so
@@ -173,6 +173,7 @@ vendor/lib/libmmjpeg.so
 vendor/lib/liblbs_core.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/liboemcamera.so
+vendor/lib/liboemcrypto.so
 lib/libposteffect.so
 lib/libqomx_core.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
@@ -190,9 +191,6 @@ etc/firmware/a330_pm4.fw
 etc/firmware/alIAF_InData_4M2M
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
-lib/libc2dcolorconvert.so
-lib/libEGL.so
-lib/libRS.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -215,7 +213,11 @@ vendor/lib/libsc-a3xx.so
 # GPS
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
+lib/hw/gps.default.so
 lib/libloc_api_v02.so
+lib/libloc_core.so
+lib/libloc_ds_api.so
+lib/libloc_eng.so
 lib/libgps.utils.so
 
 # Media
@@ -230,17 +232,6 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 lib/libmmjpeg_interface.so
-lib/libOmxAacEnc.so
-lib/libOmxAmrEnc.so
-lib/libOmxCore.so
-lib/libOmxEvrcEnc.so
-lib/libOmxQcelp13Enc.so
-lib/libOmxVdec.so
-lib/libOmxVenc.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
 
 # Power
 bin/mpdecision
@@ -295,8 +286,10 @@ vendor/firmware/keymaster.b01
 vendor/firmware/keymaster.b02
 vendor/firmware/keymaster.mdt
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libWVphoneAPI.so
 vendor/lib/libdrmfs.so
 
 # WIRELESS
@@ -310,13 +303,13 @@ bin/hci_qcomm_init
 # etc
 lib/libalIAF.so
 lib/hw/consumerir.default.so
-lib/libalDE.so
 lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
 lib/libhtcirinterface_jni.so
 lib/libBeautyChat.so
 vendor/lib/libchromatix_s5k5e_hdr.so
 vendor/lib/libscve_stub.so
+vendor/lib/libssd.so
 vendor/lib/libscve.so
 vendor/lib/libgeofence.so
 bin/irsc_util
