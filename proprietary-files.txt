@@ -92,6 +92,8 @@ lib/libalDynamicWarping_REC.so
 lib/libalIAF.so
 lib/libawb_calibration.so
 lib/libBeautyChat.so
+lib/libHtcVteEngine.so
+lib/libc2dcolorconvertgpu.so
 lib/libcamera_aec.so
 lib/libcamera_af.so
 lib/libcamera_awb.so
@@ -101,6 +103,8 @@ lib/libcamerapp.so
 lib/libdrmdecrypt.so
 lib/hw/camera.msm8974.so
 lib/libcameraface.so
+lib/libhtccamera.so
+lib/libhtcsecure.so
 lib/libtuning_aec.so
 lib/libtuning_aec_imx214_hdr.so
 lib/libtuning_aec_imx214_night.so
@@ -236,6 +240,7 @@ lib/libmmjpeg_interface.so
 # Power
 bin/mpdecision
 vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
 
 # QMI
 bin/qmuxd
@@ -306,7 +311,6 @@ lib/hw/consumerir.default.so
 lib/libalDynamicWarping.so
 lib/libhtc_depthmap.so
 lib/libhtcirinterface_jni.so
-lib/libBeautyChat.so
 vendor/lib/libchromatix_s5k5e_hdr.so
 vendor/lib/libscve_stub.so
 vendor/lib/libssd.so
