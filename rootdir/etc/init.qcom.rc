@@ -87,6 +87,10 @@ on init
 # Quick Charge 2.0 daemon
     setprop persist.usb.hvdcp.detect "true"
 
+    mkdir /nfc_record 0700 system system
+    wait /dev/block/platform/msm_sdcc.1/by-name/nfc_record
+    mount ext4 emmc@nfc_record /nfc_record nosuid nodev noatime barrier=1
+
 on fs
     mkdir /devlog 0700 root root
     mkdir /fataldevlog 0700 root root
@@ -549,6 +553,16 @@ on property:crypto.driver.load=1
 on property:crypto.driver.load=0
      exec /system/bin/rmmod qcedev.ko
      exec /system/bin/rmmod qce.ko
+
+# Felica +
+service felica_daemon /system/bin/felica_daemon
+    class late_start
+    oneshot
+
+service felica_agent /system/bin/felica_agent
+    class late_start
+    oneshot
+# Felica -
 
 on property:init.svc.bootanim=stopped
     # Overwrite ActivityManager's low memory killer settings
