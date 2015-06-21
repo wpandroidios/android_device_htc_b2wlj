@@ -1,3 +1,12 @@
+#ADSP
+bin/adsprpcd
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+
 # Audio
 etc/tfa/fm.drc
 etc/tfa/fm.eq
@@ -111,7 +120,6 @@ lib/libtuning_awb_ov2722_subcam.so
 lib/libtuning_awb_s5k5e.so
 lib/libtuning_awb_s5k5e_fov65.so
 vendor/lib/libacdbmapper.so
-vendor/lib/libadsprpc.so
 vendor/lib/libchromatix_ov2722_subcam_default_video.so
 vendor/lib/libchromatix_ov2722_subcam_common.so
 vendor/lib/libchromatix_ov2722_subcam_preview.so
@@ -166,8 +174,6 @@ vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libacdbrtac.so
 vendor/lib/librpmb.so
@@ -180,9 +186,6 @@ vendor/lib/liblbs_core.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/liboemcamera.so
 vendor/lib/liboemcrypto.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
 
 # Graphics
 etc/firmware/a225p5_pm4.fw
@@ -322,7 +325,6 @@ vendor/lib/libscve.so
 vendor/lib/libgeofence.so
 bin/irsc_util
 bin/ATFWD-daemon
-bin/adsprpcd
 bin/ptt_socket_app
 etc/hldm.bin
 etc/hltrd.bin
