@@ -1,4 +1,5 @@
 LOCAL_PATH := $(call my-dir)
+PERL = perl
 
 ## Don't change anything under here. The variables are named b2_whatever
 ## on purpose, to avoid conflicts with similarly named variables at other
@@ -6,7 +7,6 @@ LOCAL_PATH := $(call my-dir)
 
 ## Imported from the original makefile...
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
-b2_DTS_NAMES := msm8974
 
 b2_DTS_FILES = $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8974pro-ab-pm8941-b2wlj*.dts)
 b2_DTS_FILE = $(lastword $(subst /, ,$(1)))
@@ -18,10 +18,8 @@ DTBTAGNAME := "htc,project-id = <"
 
 define append-b2-dtb
 mkdir -p $(KERNEL_OUT)/arch/arm/boot;\
-$(foreach b2_DTS_NAME, $(b2_DTS_NAMES), \
    $(foreach d, $(b2_DTS_FILES), \
-      $(DTC) -p 1024 -O dtb -o $(call DTB_FILE,$(d)) $(d); \
-      cat $(KERNEL_ZIMG) $(call DTB_FILE,$(d)) > $(call ZIMG_FILE,$(d));))
+      cat $(KERNEL_ZIMG) $(call DTB_FILE,$(d)) > $(call ZIMG_FILE,$(d));)
 endef
 
 
@@ -33,7 +31,7 @@ $(INSTALLED_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/u
 	@echo -e ${CL_CYN}"Start DT image: $@"${CL_RST}
 	$(call append-b2-dtb)
 	$(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
-	$(DTBTOOL) -o $(INSTALLED_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -d $(DTBTAGNAME) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
+	$(hide) $(DTBTOOL) -o $(INSTALLED_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -d $(DTBTAGNAME) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
 	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
 
 
