@@ -24,7 +24,7 @@
 # 0PAG10000 - KDDI
 # 0PAG20000 - International
 
-TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj
+TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj,b2ul
 TARGET_BOARD_INFO_FILE ?= device/htc/b2wlj/board-info.txt
 
 BOARD_VENDOR := htc
