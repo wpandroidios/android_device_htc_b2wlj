@@ -51,19 +51,17 @@ void vendor_load_properties()
     if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
         return;
 
+    property_get("ro.boot.mid", bootmid);
+
+    if (strstr(bootmid, "0PAG10000")) {
         cdma_properties("0", "10", "44050", "KDDI");
         property_set("ro.build.fingerprint", "htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys");
         property_set("ro.build.description", "1.17.970.1 CL368778 release-keys");
         property_set("ro.product.device", "htc_b2wlj");
         property_set("ro.build.product", "htc_b2wlj");
-        property_set("ro.ril.vzw.feature", "1");
         property_set("ro.ril.oem.ecclist", "110,118,119,184110,184118,184119,186110,186118,186119");
-        property_set("ro.ril.enable.a52", "0");
-        property_set("ro.ril.enable.dtm", "0");
-        property_set("ro.ril.gprsclass", "12");
-        property_set("ro.ril.att.feature", "0");
-        property_set("ro.ril.enable.managed.roaming", "1");
-        property_set("ro.ril.oem.show.act", "0");
+        property_set("ro.ril.enable.r8fd", "0");
+        property_set("ro.ril.enable.sdr", "0");
         property_set("ro.ril.set.mtusize", "1420");
         property_set("ro.ril.air.enabled", "1");
         property_set("ro.ril.wp.feature", "1");
@@ -72,7 +70,7 @@ void vendor_load_properties()
         property_set("ro.config.svlte1x", "true");
         property_set("ro.ril.def.agps.mode", "6");
         property_set("ro.telephony.get_imsi_from_sim", "true");
-
+    }
     property_get("ro.product.device", device);
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
 }
