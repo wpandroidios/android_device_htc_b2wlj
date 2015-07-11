@@ -54,7 +54,7 @@ media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
 
 # Camera
-persist.camera.maxopen=3
+camera2.portability.force_api=1
 
 # GPS
 persist.gps.qc_nlp_in_use=0
