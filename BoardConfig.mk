@@ -87,7 +87,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 EXTENDED_FONT_FOOTPRINT := true
 
 # Graphics
-BOARD_EGL_CFG := device/htc/b2wlj/configs/egl.cfg
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
