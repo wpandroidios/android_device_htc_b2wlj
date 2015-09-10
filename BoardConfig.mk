@@ -196,4 +196,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.c
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/b2wlj/cmhw
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS += \
+    device/htc/b2wlj/cmhw \
+    hardware/cyanogen/cmhw
