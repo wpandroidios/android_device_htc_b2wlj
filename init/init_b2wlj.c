@@ -35,9 +35,7 @@
 #include "util.h"
 
 void cdma_properties(char cdma_subscription[],
-                     char default_network[],
-                     char operator_numeric[],
-                     char operator_alpha[]);
+                     char default_network[]);
 
 void vendor_load_properties()
 {
@@ -54,7 +52,7 @@ void vendor_load_properties()
     property_get("ro.boot.mid", bootmid);
 
     if (strstr(bootmid, "0PAG10000")) {
-        cdma_properties("0", "10", "44050", "KDDI");
+        cdma_properties("0", "10");
         property_set("ro.build.fingerprint", "htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys");
         property_set("ro.build.description", "1.17.970.1 CL368778 release-keys");
         property_set("ro.product.device", "htc_b2wlj");
@@ -75,17 +73,10 @@ void vendor_load_properties()
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
 }
 
-void cdma_properties(char default_cdma_sub[], char default_network[],
-                     char operator_numeric[], char operator_alpha[])
+void cdma_properties(char default_cdma_sub[], char default_network[])
 {
     property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
     property_set("ro.telephony.default_network", default_network);
-    property_set("ro.cdma.home.operator.numeric", operator_numeric);
-    property_set("gsm.sim.operator.numeric", operator_numeric);
-    property_set("gsm.operator.numeric", operator_numeric);
-    property_set("ro.cdma.home.operator.alpha", operator_alpha);
-    property_set("gsm.sim.operator.alpha", operator_alpha);
-    property_set("gsm.operator.alpha", operator_numeric);
 
     property_set("telephony.lteOnCdmaDevice", "1");
     property_set("ro.ril.svdo", "true");
