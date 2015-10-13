@@ -26,6 +26,9 @@
 
 TARGET_OTA_ASSERT_DEVICE := b2,b2wlj,htc_b2wlj,b2ul
 
+# For Japan device
+JPN_FELICA_DEVICE := true
+
 # Inherit from common msm8974-common
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
