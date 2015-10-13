@@ -55,11 +55,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1476395008
 # SELinux
 BOARD_SEPOLICY_DIRS += device/htc/b2wlj/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    cir_fw_update.te \
-    file_contexts \
-    system_app.te
-
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_b2wlj
