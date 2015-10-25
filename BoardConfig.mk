@@ -63,7 +63,7 @@ BOARD_SEPOLICY_DIRS += device/htc/b2wlj/sepolicy
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.c
+TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.cpp
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
