@@ -37,7 +37,7 @@
 void cdma_properties(char cdma_subscription[],
                      char default_network[]);
 
-void vendor_load_properties()
+void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
     char bootmid[PROP_VALUE_MAX];
@@ -73,7 +73,7 @@ void vendor_load_properties()
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
 }
 
-void cdma_properties(char default_cdma_sub[], char default_network[])
+void cdma_properties(char const default_cdma_sub[], char const default_network[])
 {
     property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
     property_set("ro.telephony.default_network", default_network);
