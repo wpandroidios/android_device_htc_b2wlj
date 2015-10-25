@@ -34,8 +34,35 @@
 #include "log.h"
 #include "util.h"
 
-void cdma_properties(char cdma_subscription[],
-                     char default_network[]);
+void common_properties()
+{
+    property_set("rild.libargs", "-d /dev/smd0");
+    property_set("ro.ril.hsdpa.category", "14");
+    property_set("ro.ril.hsxpa", "4");
+    property_set("ro.ril.disable.cpc", "1");
+}
+
+void cdma_properties(char const default_cdma_sub[], char const default_network[])
+{
+    property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
+    property_set("ro.telephony.default_network", default_network);
+
+    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("ro.ril.svdo", "true");
+    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
+    property_set("ro.ril.enable.sdr", "0");
+    property_set("ro.ril.enable.gea3", "1");
+    property_set("ro.ril.enable.a53", "1");
+    property_set("ro.ril.enable.r8fd=1", "1");
+    property_set("persist.radio.snapshot_enabled", "1");
+    property_set("persist.radio.snapshot_timer", "22");
+}
+
+void gsm_properties(char const default_network[])
+{
+    property_set("ro.telephony.default_network", default_network);
+    property_set("telephony.lteOnGsmDevice", "1");
+}
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
@@ -52,6 +79,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.boot.mid", bootmid);
 
     if (strstr(bootmid, "0PAG10000")) {
+        common_properties();
         cdma_properties("0", "10");
         property_set("ro.build.fingerprint", "htc/HTL23_jp_kdi/htc_b2wlj:4.4.2/KOT49H/368778.1:user/release-keys");
         property_set("ro.build.description", "1.17.970.1 CL368778 release-keys");
@@ -71,20 +99,4 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
     property_get("ro.product.device", device);
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
-}
-
-void cdma_properties(char const default_cdma_sub[], char const default_network[])
-{
-    property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
-    property_set("ro.telephony.default_network", default_network);
-
-    property_set("telephony.lteOnCdmaDevice", "1");
-    property_set("ro.ril.svdo", "true");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
-    property_set("ro.ril.enable.sdr", "0");
-    property_set("ro.ril.enable.gea3", "1");
-    property_set("ro.ril.enable.a53", "1");
-    property_set("ro.ril.enable.r8fd=1", "1");
-    property_set("persist.radio.snapshot_enabled", "1");
-    property_set("persist.radio.snapshot_timer", "22");
 }
