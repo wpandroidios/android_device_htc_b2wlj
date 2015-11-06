@@ -160,7 +160,6 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libjpegehw.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libmmjpeg.so
-vendor/lib/libllvm-qcom.so
 vendor/lib/liboemcamera.so
 
 # Graphics
@@ -186,6 +185,7 @@ vendor/lib/libc2d30.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
