@@ -76,7 +76,6 @@ lib/libcamera_awb.so
 lib/libmmcamera_interface.so
 lib/libmmcamera_rubik.so
 lib/libcamerapp.so
-lib/libdrmdecrypt.so
 lib/hw/camera.msm8974.so
 lib/libcameraface.so
 lib/libhtccamera.so
@@ -162,7 +161,6 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libacdbrtac.so
-vendor/lib/librpmb.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libjpegehw.so
@@ -171,7 +169,6 @@ vendor/lib/libmmjpeg.so
 vendor/lib/liblbs_core.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/liboemcamera.so
-vendor/lib/liboemcrypto.so
 
 # Graphics
 etc/firmware/a225p5_pm4.fw
@@ -276,8 +273,15 @@ etc/firmware/hcheck.b03
 etc/firmware/hcheck.mdt
 bin/hcheck
 
-# DRM
+# TZBSP
 bin/qseecomd
+lib/libdrmdiag.so
+lib/libdrmfs.so
+lib/libdrmtime.so
+lib/liboemcrypto.so
+lib/libQSEEComAPI.so
+lib/librpmb.so
+lib/libssd.so
 vendor/firmware/cmnlib.b00
 vendor/firmware/cmnlib.b01
 vendor/firmware/cmnlib.b02
@@ -288,16 +292,6 @@ vendor/firmware/keymaster.b03
 vendor/firmware/keymaster.b01
 vendor/firmware/keymaster.b02
 vendor/firmware/keymaster.mdt
-vendor/lib/drm/libdrmwvmplugin.so
-#vendor/lib/drm/libfwdlockengine.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libWVphoneAPI.so
-vendor/lib/libdrmfs.so
-#vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
 
 # WIRELESS
 bin/radish
@@ -330,13 +324,21 @@ etc/firmware/widevine.b00
 etc/firmware/widevine.b01
 etc/firmware/widevine.b02
 etc/firmware/widevine.b03
+lib/drm/libfwdlockengine.so
+vendor/lib/libdrmdecrypt.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVphoneAPI.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/drm/libdrmwvmplugin.so
+#vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
 
 # etc
 lib/libalIAF.so
 lib/hw/consumerir.default.so
 lib/libhtc_depthmap.so
 vendor/lib/libscve_stub.so
-vendor/lib/libssd.so
 vendor/lib/libscve.so
 bin/ATFWD-daemon
 bin/ptt_socket_app
