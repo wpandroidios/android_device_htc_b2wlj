@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8974
 
+# Init
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # IRDA
 PRODUCT_BOOT_JARS += \
     htcirlibs
