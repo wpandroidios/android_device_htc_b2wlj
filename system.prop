@@ -32,3 +32,6 @@ DEVICE_PROVISIONED=1
 # Camera
 camera2.portability.force_api=1
 
+# Perf
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
+
