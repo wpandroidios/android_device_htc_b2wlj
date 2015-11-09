@@ -25,6 +25,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/b2wlj/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     device/htc/b2wlj/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
