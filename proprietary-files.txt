@@ -223,10 +223,6 @@ lib/libmmjpeg_interface.so
 bin/mpdecision
 #vendor/lib/libthermalioctl.so
 
-# Thermal
-bin/thermal-engine
-vendor/lib/libthermalclient.so
-
 # QMI
 bin/qmuxd
 bin/rmt_storage
