@@ -59,6 +59,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1476395008
 
 # SELinux
+include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/b2wlj/sepolicy
 
 # Vendor Init
