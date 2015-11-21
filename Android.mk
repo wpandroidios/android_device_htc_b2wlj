@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),b2wlj)
 
 include $(call all-subdir-makefiles)
