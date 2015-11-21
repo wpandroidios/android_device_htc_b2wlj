@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The Android Open-Source Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-
 ifeq ($(TARGET_DEVICE),b2wlj)
 
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call all-subdir-makefiles)
 
 include $(CLEAR_VARS)
 
@@ -35,4 +34,3 @@ $(MBA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(MBA_SYMLINKS)
 
 endif
-
