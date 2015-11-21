@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
+# overlays
+DEVICE_PACKAGE_OVERLAYS += device/htc/b2wlj/overlay
+
 # Inherit b2-specific vendor tree
 $(call inherit-product-if-exists, vendor/htc/b2wlj/b2wlj-vendor.mk)
 
 # Inherit from msm8974-common
 $(call inherit-product, device/htc/msm8974-common/msm8974-common.mk)
-
-# overlays
-DEVICE_PACKAGE_OVERLAYS += device/htc/b2wlj/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
