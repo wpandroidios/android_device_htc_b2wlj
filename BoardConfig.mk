@@ -69,5 +69,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/b2wlj/init/init_b2wlj.cpp
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/b2wlj/releasetools
+
+# Inherit from the proprietary version
 -include vendor/htc/b2wlj/BoardConfigVendor.mk
 
