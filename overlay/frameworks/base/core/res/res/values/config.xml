@@ -290,8 +290,8 @@
     <bool name="config_hotswapCapable">true</bool>
 
     <!-- Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
+    <add-resource type="string" name="config_perf_profile_prop">sys.perf.profile</add-resource>
+    <add-resource type="string" name="config_perf_profile_default_entry">1</add-resource>
 
     <!-- SD card is hot-pluggable on this device -->
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -321,8 +321,8 @@
     </string-array>
 
     <!-- Default values for display color temperature -->
-    <integer name="config_dayColorTemperature">7000</integer>
-    <integer name="config_nightColorTemperature">4000</integer>
+    <add-resource type="integer" name="config_dayColorTemperature">7000</add-resource>
+    <add-resource type="integer" name="config_nightColorTemperature">4000</add-resource>
 
 </resources>
 
